@@ -1,4 +1,5 @@
-# Automated backups for MongoDB
+# mongo-backup
+>Automated backups for MongoDB containers
 
 This Docker image runs mongodump to backup data to folder `/backup`. The image uses [backup](http://backup.github.io/backup/v4/) Ruby gem to create backups and [rufus-scheduler](https://github.com/jmettraux/rufus-scheduler) gem for scheduling.
 
