@@ -18,6 +18,7 @@ ADD Gemfile.lock /app/
 
 RUN cd /app ; bundle install --without development test
 
+VOLUME /backup
 ADD . /app
 WORKDIR /app
 
