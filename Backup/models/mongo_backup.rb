@@ -9,7 +9,7 @@
 # For more information about Backup's components, see the documentation at:
 # http://backup.github.io/backup
 #
-Model.new(:mongo_backup, 'MongoDB backup') do
+Model.new(:mongo_backup, ENV['BACKUP_NAME']) do
 
   ##
   # MongoDB [Database]
