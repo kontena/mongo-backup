@@ -159,16 +159,9 @@ Model.new(:mongo_backup, ENV['BACKUP_NAME']) do
 
   if ENV['SLACK_WEBHOOK_URL']
     notify_by Slack do |slack|
-      if ENV['SLACK_NOTIFY_ON_SUCCESS']
-        slack.on_success = true
-      end
-      if ENV['SLACK_NOTIFY_ON_WARNING']
-        slack.on_warning = true
-      end
-      if ENV['SLACK_NOTIFY_ON_FAILURE']
-        slack.on_failure = true
-      end
-
+      slack.on_success = !ENV['SLACK_NOTIFY_ON_SUCCESS'].nil?
+      slack.on_warning = !ENV['SLACK_NOTIFY_ON_WARNING'].nil?
+      slack.on_failure = !ENV['SLACK_NOTIFY_ON_FAILURE'].nil?
       # The integration token
       slack.webhook_url = "#{ENV['SLACK_WEBHOOK_URL']}"
 
