@@ -27,7 +27,7 @@ Model.new(:mongo_backup, ENV['BACKUP_NAME']) do
       db.ipv6               = false
       db.additional_options = ENV['MONGODB_OPTIONS'].split(",").to_s if  ENV['MONGODB_OPTIONS']
       db.lock               = !ENV['MONGODB_LOCK'].nil?
-      db.oplog              = !ENV['MONGODB_OPLOCK'].nil?
+      db.oplog              = !ENV['MONGODB_OPLOG'].nil?
     end
 
   end
