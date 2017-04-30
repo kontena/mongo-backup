@@ -157,7 +157,7 @@ Model.new(:mongo_backup, ENV['BACKUP_NAME']) do
   #
   if MongoBackupHelpers.env_set_and_not_empty ENV['OPENSSL_PASSWORD']
     encrypt_with OpenSSL do |encryption|
-      encryption.password      = "#{OPENSSL_PASSWORD}"            # From String
+      encryption.password      = "#{ENV['OPENSSL_PASSWORD']}"            # From String
       encryption.base64        = true
       encryption.salt          = true
     end
